@@ -1,0 +1,33 @@
+name: Build and publish
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - v*.*.*
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: "yarn"
+      - run: yarn
+      - run: yarn build
+      - run: zip -r dog.clockwork.http.zip dog.clockwork.http
+      - uses: actions/upload-artifact@v1
+        with:
+          name: dog.clockwork.http.zip
+          path: dog.clockwork.http.zip
+      - uses: ncipollo/release-action@v1
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          allowUpdates: true
+          artifacts: dog.clockwork.http.zip
+          token: ${{ secrets.GITHUB_TOKEN }}

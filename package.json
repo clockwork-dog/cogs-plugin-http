@@ -1,0 +1,13 @@
+{
+  "name": "cogs-plugin-http",
+  "version": "0.1.0",
+  "description": "HTTP plugin for COGS",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf dog.clockwork.http && mkdir -p dog.clockwork.http/node_modules/@clockworkdog/cogs-client/dist/browser && cp index.html index.js cogs-plugin-manifest.json dog.clockwork.http && cp node_modules/@clockworkdog/cogs-client/dist/browser/index.js dog.clockwork.http/node_modules/@clockworkdog/cogs-client/dist/browser"
+  },
+  "dependencies": {
+    "@clockworkdog/cogs-client": "^1.2.0"
+  }
+}

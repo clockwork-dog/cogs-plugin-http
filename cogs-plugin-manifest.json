@@ -1,0 +1,19 @@
+{
+  "name": "HTTP",
+  "version": "0.1.0",
+  "description": "Send HTTP requests",
+  "icon": "globe",
+  "events": {
+    "fromCogs": [
+      {
+        "name": "GET",
+        "value": { "type": "string" }
+      },
+      {
+        "name": "POST",
+        "value": { "type": "string" }
+      }
+    ],
+    "toCogs:": []
+  }
+}
