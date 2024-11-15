@@ -21,7 +21,7 @@ jobs:
       - run: yarn
       - run: yarn build
       - run: zip -r dog.clockwork.http.zip dog.clockwork.http
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         with:
           name: dog.clockwork.http.zip
           path: dog.clockwork.http.zip
