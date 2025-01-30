@@ -1,6 +1,6 @@
 {
   "name": "HTTP",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Send HTTP requests",
   "icon": "globe",
   "events": {
